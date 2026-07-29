@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Два Алика — AI-агенты для создания сайтов и сбора данных</title>
+  <meta name="description" content="Два Алика — студия AI-агентов. Создаём сайты любой сложности, собираем данные с маркетплейсов, анализируем рынок. Быстро, качественно, без лишних затрат.">
+  <meta name="keywords" content="AI-агенты, создание сайтов, парсинг данных, лендинги, интернет-магазины, OpenCode, Apify, веб-разработка">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://marcelalbert1712-dotcom.github.io/portfolio-dva-alika/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Два Алика — AI-агенты для вашего бизнеса">
+  <meta property="og:description" content="Создаём сайты и собираем данные с помощью AI-агентов. Быстро, качественно, без лишних затрат.">
+  <meta property="og:image" content="https://marcelalbert1712-dotcom.github.io/portfolio-dva-alika/images/og-preview.png">
+  <meta property="og:url" content="https://marcelalbert1712-dotcom.github.io/portfolio-dva-alika/">
+  <meta property="og:locale" content="ru_RU">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Два Алика — AI-агенты для вашего бизнеса">
+  <meta name="twitter:description" content="Создаём сайты и собираем данные с помощью AI-агентов.">
+  <meta name="twitter:image" content="https://marcelalbert1712-dotcom.github.io/portfolio-dva-alika/images/og-preview.png">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo">
+        <span class="header__logo-icon">∆</span>
+        <span class="header__logo-text">Два Алика</span>
+      </a>
+      <nav class="header__nav" id="mainNav">
+        <a href="#about">О студии</a>
+        <a href="#projects">Проекты</a>
+        <a href="#tech">Технологии</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+        <span class="theme-toggle__icon">☀️</span>
+      </button>
+      <button class="header__burger" id="burgerBtn" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="hero__code">
+          <span class="hero__code-prompt">&gt;</span>
+          <span class="hero__code-typing" id="typewriter"></span>
+          <span class="hero__code-cursor">▌</span>
+        </div>
+        <h1 class="hero__title">Два AI-агента —<br>сотни возможностей<br>для вашего бизнеса</h1>
+        <p class="hero__subtitle">Создаём сайты любой сложности и собираем данные с маркетплейсов. Полный цикл: от брифа до деплоя.</p>
+        <a href="#projects" class="btn btn--primary">Смотреть проекты</a>
+      </div>
+      <div class="hero__stats" id="stats">
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-target="5">0</span>
+          <span class="hero__stat-label">Проектов</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-target="26">0</span>
+          <span class="hero__stat-label">Скиллов</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-num" data-target="2">0</span>
+          <span class="hero__stat-label">Агента</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">О студии</span>
+        <h2>Два агента — одна команда</h2>
+        <p class="section__desc">Мы — два специализированных AI-агента, работающих в связке. Один собирает и анализирует данные, второй создаёт готовые сайты. Результат — быстрее, чем в любой студии, и дешевле, чем наём команды.</p>
+      </div>
+      <div class="about__tabs animate-on-scroll">
+        <button class="about__tab-btn active" data-tab="parser" style="--tab-accent: var(--parser)">
+          <span class="about__tab-icon">🔍</span>
+          Алик-Парсер
+        </button>
+        <button class="about__tab-btn" data-tab="architect" style="--tab-accent: var(--architect)">
+          <span class="about__tab-icon">🏗️</span>
+          Алик-Архитектор
+        </button>
+      </div>
+      <div class="about__panels animate-on-scroll">
+        <div class="about__panel active" id="panel-parser">
+          <div class="about__agent">
+            <div class="about__agent-avatar parser-glow">
+              <img src="images/alik-parser.png" alt="Алик-Парсер — AI-агент для сбора данных" loading="lazy">
+            </div>
+            <div class="about__agent-info">
+              <h3 style="color: var(--parser)">Алик-Парсер</h3>
+              <p class="about__agent-role">Специалист по сбору и анализу данных</p>
+              <ul class="about__agent-skills">
+                <li>Парсинг маркетплейсов (Wildberries, Ozon, Avito)</li>
+                <li>Мониторинг цен и остатков конкурентов</li>
+                <li>Сбор отзывов и анализ тональности</li>
+                <li>Экспорт данных в Excel, PDF, HTML-отчёты</li>
+                <li>Автоматизация по расписанию</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="about__panel" id="panel-architect">
+          <div class="about__agent">
+            <div class="about__agent-avatar architect-glow">
+              <img src="images/alik-architect.png" alt="Алик-Архитектор — AI-агент для создания сайтов" loading="lazy">
+            </div>
+            <div class="about__agent-info">
+              <h3 style="color: var(--architect)">Алик-Архитектор</h3>
+              <p class="about__agent-role">Веб-разработчик и дизайнер</p>
+              <ul class="about__agent-skills">
+                <li>Лендинги, многостраничные сайты, блоги</li>
+                <li>Интернет-магазины с корзиной и каталогом</li>
+                <li>SEO-оптимизация и тёмная тема</li>
+                <li>Анимации, параллакс, микро-эффекты</li>
+                <li>Деплой на GitHub Pages, Vercel, Netlify</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">Проекты</span>
+        <h2>Наши работы</h2>
+        <p class="section__desc">Пять проектов — от блогов до интернет-магазинов. Каждый создан с нуля с использованием современных технологий и AI-инструментов.</p>
+      </div>
+      <div class="projects__grid" id="projectsGrid">
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
+          <div class="project-card__image">
+            <img src="images/snow-peak.png" alt="Снежный Пик — лендинг горнолыжного отеля" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Лендинг</span>
+            <h3 class="project-card__title">Снежный Пик</h3>
+            <p class="project-card__desc">Лендинг для премиального горнолыжного отеля с галереей, ценами, формой бронирования и тёмной темой.</p>
+            <div class="project-card__footer">
+              <a href="https://marcelalbert1712-dotcom.github.io/snow-peak-landing/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--parser)">
+          <div class="project-card__image">
+            <img src="images/gorny-expert.png" alt="Горный эксперт — блог о горнолыжных курортах" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Блог</span>
+            <h3 class="project-card__title">Горный эксперт</h3>
+            <p class="project-card__desc">Многостраничный блог о горнолыжных курортах с погодой, сравнением цен, советами и Telegram-формой.</p>
+            <div class="project-card__footer">
+              <a href="https://ski-project-pi.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
+          <div class="project-card__image">
+            <img src="images/summit-gear.png" alt="Summit Gear Shop — интернет-магазин снаряжения" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Магазин</span>
+            <h3 class="project-card__title">Summit Gear Shop</h3>
+            <p class="project-card__desc">Полноценный интернет-магазин горнолыжного снаряжения с корзиной, каталогом, фильтрацией и формой заказа.</p>
+            <div class="project-card__footer">
+              <a href="https://summit-gear-shop.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--parser)">
+          <div class="project-card__image">
+            <img src="images/mir-v-ryukzake.png" alt="Мир в рюкзаке — блог о путешествиях" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Блог</span>
+            <h3 class="project-card__title">Мир в рюкзаке</h3>
+            <p class="project-card__desc">Блог о путешествиях с картой маршрутов, поиском, категориями статей и мультиязычностью (RU/EN).</p>
+            <div class="project-card__footer">
+              <a href="https://mir-v-ryukzake.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
+          <div class="project-card__image">
+            <img src="images/altai-wind.png" alt="Алтайский Ветер — лендинг студии йоги" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Лендинг</span>
+            <h3 class="project-card__title">Алтайский Ветер</h3>
+            <p class="project-card__desc">Лендинг студии йоги и медитации с программами ретритов, галереей природы Алтая, отзывами и Telegram-формой.</p>
+            <div class="project-card__footer">
+              <a href="https://altai-wind-landing.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tech" id="tech">
+    <div class="container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">Технологии</span>
+        <h2>Инструменты и стек</h2>
+        <p class="section__desc">Мы используем современные AI-инструменты и платформы для создания сайтов и сбора данных.</p>
+      </div>
+      <div class="tech__grid animate-on-scroll">
+        <div class="tech__item">
+          <div class="tech__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <span class="tech__name">OpenCode</span>
+          <span class="tech__desc">Платформа AI-агентов</span>
+        </div>
+        <div class="tech__item">
+          <div class="tech__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <span class="tech__name">Apify</span>
+          <span class="tech__desc">Парсинг и автоматизация</span>
+        </div>
+        <div class="tech__item">
+          <div class="tech__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <span class="tech__name">Netlify</span>
+          <span class="tech__desc">Хостинг и деплой</span>
+        </div>
+        <div class="tech__item">
+          <div class="tech__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 13 14 20 7"/><polyline points="14 7 20 7 20 13"/></svg>
+          </div>
+          <span class="tech__name">Vercel</span>
+          <span class="tech__desc">Фронтенд-платформа</span>
+        </div>
+        <div class="tech__item">
+          <div class="tech__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <span class="tech__name">GitHub</span>
+          <span class="tech__desc">Git-платформа</span>
+        </div>
+        <div class="tech__item">
+          <div class="tech__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <span class="tech__name">Telegram API</span>
+          <span class="tech__desc">Уведомления и чат-боты</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">Контакты</span>
+        <h2>Напишите нам</h2>
+        <p class="section__desc">Расскажите о вашей задаче — мы подберём решение и предложим лучший вариант.</p>
+      </div>
+      <div class="contact__inner animate-on-scroll">
+        <form class="contact__form" id="contactForm">
+          <div class="contact__fields">
+            <div class="contact__field">
+              <label for="formName">Ваше имя</label>
+              <input type="text" id="formName" name="name" placeholder="Иван Петров" required>
+            </div>
+            <div class="contact__field">
+              <label for="formEmail">Email</label>
+              <input type="email" id="formEmail" name="email" placeholder="ivan@example.com" required>
+            </div>
+            <div class="contact__field contact__field--full">
+              <label for="formMessage">Сообщение</label>
+              <textarea id="formMessage" name="message" placeholder="Опишите вашу задачу..." rows="5" required></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" id="formSubmit">
+            Отправить
+          </button>
+          <div class="contact__form-status" id="formStatus"></div>
+        </form>
+        <div class="contact__info">
+          <div class="contact__info-item">
+            <span class="contact__info-icon">📧</span>
+            <div>
+              <span class="contact__info-label">Email</span>
+              <a href="mailto:hello@dvaalika.ru">hello@dvaalika.ru</a>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-icon">📱</span>
+            <div>
+              <span class="contact__info-label">Telegram</span>
+              <a href="https://t.me/dvaalika_bot" target="_blank" rel="noopener">@dvaalika_bot</a>
+            </div>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-icon">🌐</span>
+            <div>
+              <span class="contact__info-label">GitHub</span>
+              <a href="https://github.com/marcelalbert1712-dotcom" target="_blank" rel="noopener">marcelalbert1712-dotcom</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">∆ Два Алика</span>
+        <p class="footer__copy">© 2026 Два Алика. Все права защищены.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#about">О студии</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
