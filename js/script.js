@@ -246,11 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const text = `📩 Новое сообщение с портфолио\n\nИмя: ${name}\nEmail: ${email}\nСообщение: ${message}`;
 
     try {
-      const res = await fetch(`https://api.telegram.org/bot8560895163:AAGdl8lD2XnaSmZYw7QI70OFBMuDfUozhYE/sendMessage`, {
+      const res = await fetch(`https://api.telegram.org/botTELEGRAM_BOT_TOKEN_PLACEHOLDER/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          chat_id: '916320421',
+          chat_id: 'TELEGRAM_CHAT_ID_PLACEHOLDER',
           text: text,
           parse_mode: 'HTML'
         })
