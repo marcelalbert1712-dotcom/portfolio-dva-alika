@@ -1,4 +1,81 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
+  const robot = document.querySelector('.hero-robot');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scrambleChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%';
+
+  function scrambleElement(element, finalText, delay = 0) {
+    if (!element) return;
+    element.classList.add('scramble-text');
+    if (reduceMotion) {
+      element.textContent = finalText;
+      return;
+    }
+    window.setTimeout(() => {
+      const startedAt = performance.now();
+      const duration = Math.max(520, finalText.length * 48);
+      const tick = (now) => {
+        const progress = Math.min((now - startedAt) / duration, 1);
+        const revealed = Math.floor(progress * finalText.length);
+        element.textContent = finalText.split('').map((char, index) => {
+          if (index < revealed || char === ' ') return char;
+          return scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+        }).join('');
+        if (progress < 1) window.requestAnimationFrame(tick);
+        else element.textContent = finalText;
+      };
+      window.requestAnimationFrame(tick);
+    }, delay);
+  }
+
+  document.querySelectorAll('.hero-node').forEach((node, index) => {
+    scrambleElement(node, node.textContent.trim(), index * 180);
+  });
+
+  const agentHeadingObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const heading = entry.target;
+        scrambleElement(heading, heading.textContent.trim());
+        observer.unobserve(heading);
+      }
+    });
+  }, { threshold: 0.35 });
+  document.querySelectorAll('.agent-card h3').forEach((heading) => agentHeadingObserver.observe(heading));
+
+  if (!reduceMotion) {
+    let ticking = false;
+    const updateAtmosphere = () => {
+      document.documentElement.style.setProperty('--city-shift', `${Math.min(window.scrollY * -0.08, 0).toFixed(1)}px`);
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateAtmosphere);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateAtmosphere();
+  }
+  if (robot && !reduceMotion) {
+    robot.addEventListener('pointermove', (event) => {
+      const rect = robot.getBoundingClientRect();
+      const x = Math.max(-8, Math.min(8, (event.clientX - rect.left) / rect.width * 16 - 8));
+      const y = Math.max(-8, Math.min(8, (event.clientY - rect.top) / rect.height * 16 - 8));
+      robot.style.setProperty('--robot-x', `${x.toFixed(1)}px`);
+      robot.style.setProperty('--robot-y', `${y.toFixed(1)}px`);
+    });
+    robot.addEventListener('pointerleave', () => {
+      robot.style.setProperty('--robot-x', '0px');
+      robot.style.setProperty('--robot-y', '0px');
+    });
+  }
+  const reviewersToggle = document.querySelector('.reviewers-toggle');
+  const reviewersStrip = document.querySelector('.reviewers-strip');
+  reviewersToggle?.addEventListener('click', () => {
+    const open = reviewersStrip.classList.toggle('is-open');
+    reviewersToggle.setAttribute('aria-expanded', String(open));
+    reviewersToggle.innerHTML = open ? 'Скрыть роли <span>−</span>' : 'Показать роли <span>+</span>';
+  });
 
   // ===== THEME TOGGLE =====
   const ThemeManager = {
@@ -35,6 +112,28 @@ document.addEventListener('DOMContentLoaded', () => {
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => nav.classList.remove('open'));
   });
+
+  // ===== ACTIVE SECTION NAVIGATION =====
+  const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+  const navSections = navLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  const setActiveNav = (id) => {
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+    });
+  };
+
+  const navObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setActiveNav(visible.target.id);
+  }, { rootMargin: '-24% 0px -60% 0px', threshold: [0.05, 0.2, 0.5] });
+
+  navSections.forEach(section => navObserver.observe(section));
+  setActiveNav('hero');
 
   // ===== HERO CANVAS (grid + particles) =====
   const canvas = document.getElementById('heroCanvas');
@@ -127,17 +226,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== TYPEWRITER EFFECT =====
   const typewriterEl = document.getElementById('typewriter');
-  const phrases = [
+  const FALLBACK_PHRASES = [
     'Привет, мы Два Алика',
     'Делаем сайты на AI',
     'Парсим данные за минуты',
     'Ваш бизнес — наш код'
   ];
+  function getPhrases() {
+    if (window.I18N_DATA && window.ALIK_LANG && window.I18N_DATA[window.ALIK_LANG]) {
+      return window.I18N_DATA[window.ALIK_LANG].typePhrases || FALLBACK_PHRASES;
+    }
+    return FALLBACK_PHRASES;
+  }
   let phraseIdx = 0;
   let charIdx = 0;
   let isDeleting = false;
 
   function typewriterTick() {
+    const phrases = getPhrases();
+    phraseIdx = phraseIdx % phrases.length;
     const current = phrases[phraseIdx];
     if (!isDeleting) {
       charIdx++;
@@ -149,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } else {
       charIdx--;
-      typewriterEl.textContent = current.substring(0, charIdx);
+      typewriterEl.textContent = current.substring(0, Math.max(0, charIdx));
       if (charIdx === 0) {
         isDeleting = false;
         phraseIdx = (phraseIdx + 1) % phrases.length;
@@ -160,6 +267,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typewriterTick, isDeleting ? 30 : 60);
   }
   typewriterTick();
+  window.addEventListener('aliklang', () => {
+    phraseIdx = 0; charIdx = 0; isDeleting = false;
+  });
 
   // ===== STATS COUNTER =====
   const statsSection = document.getElementById('stats');
@@ -220,6 +330,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ===== YANDEX METRICA GOALS =====
+  const reachGoal = (goalName, params) => {
+    if (typeof window.ym === 'function') {
+      window.ym(111593634, 'reachGoal', goalName, params);
+    }
+  };
+
+  document.querySelectorAll('.project-card__link').forEach((link, index) => {
+    link.addEventListener('click', () => {
+      reachGoal('project_click', {
+        project_index: index + 1,
+        project_url: link.href
+      });
+    });
+  });
+
+  document.querySelectorAll('a[href*="t.me/"]').forEach(link => {
+    link.addEventListener('click', () => reachGoal('telegram_click'));
+  });
+
   // ===== TELEGRAM FORM =====
   const form = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
@@ -246,17 +376,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const text = `📩 Новое сообщение с портфолио\n\nИмя: ${name}\nEmail: ${email}\nСообщение: ${message}`;
 
     try {
-      const res = await fetch(`https://api.telegram.org/botTELEGRAM_BOT_TOKEN_PLACEHOLDER/sendMessage`, {
+      const res = await fetch('/api/send-telegram', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          chat_id: 'TELEGRAM_CHAT_ID_PLACEHOLDER',
-          text: text,
-          parse_mode: 'HTML'
+          name,
+          email,
+          message
         })
       });
 
       if (res.ok) {
+        reachGoal('form_submit');
         formStatus.className = 'contact__form-status success';
         formStatus.textContent = 'Сообщение отправлено! Мы свяжемся с вами в ближайшее время.';
         form.reset();
@@ -273,3 +404,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+

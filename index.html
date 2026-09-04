@@ -1,43 +1,81 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Портфолио Два Алика | Создание сайтов и лендингов</title>
-  <meta name="description" content="Два Алика — студия AI-агентов. Создаём сайты любой сложности, собираем данные с маркетплейсов, анализируем рынок. Быстро, качественно, без лишних затрат.">
+  <title>Alic Studio — AI-агенты для бизнеса</title>
+  <meta name="description" content="Alic Studio создаёт сайты и анализирует рынок с помощью специализированных AI-агентов.">
   <meta name="keywords" content="AI-агенты, создание сайтов, парсинг данных, лендинги, интернет-магазины, OpenCode, Apify, веб-разработка">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://marcelalbert1712-dotcom.github.io/portfolio-dva-alika/">
+  <link rel="canonical" href="https://portfolio-dva-alika.vercel.app/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Два Алика — AI-агенты для вашего бизнеса">
   <meta property="og:description" content="Создаём сайты и собираем данные с помощью AI-агентов. Быстро, качественно, без лишних затрат.">
-  <meta property="og:image" content="https://marcelalbert1712-dotcom.github.io/portfolio-dva-alika/images/og-preview.png">
-  <meta property="og:url" content="https://marcelalbert1712-dotcom.github.io/portfolio-dva-alika/">
+  <meta property="og:image" content="https://portfolio-dva-alika.vercel.app/images/og-preview.png">
+  <meta property="og:url" content="https://portfolio-dva-alika.vercel.app/">
   <meta property="og:locale" content="ru_RU">
+  <meta name="theme-color" content="#08080A">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Два Алика — AI-агенты для вашего бизнеса">
   <meta name="twitter:description" content="Создаём сайты и собираем данные с помощью AI-агентов.">
-  <meta name="twitter:image" content="https://marcelalbert1712-dotcom.github.io/portfolio-dva-alika/images/og-preview.png">
+  <meta name="twitter:image" content="https://portfolio-dva-alika.vercel.app/images/og-preview.png">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Alic Studio",
+    "alternateName": "Два Алика",
+    "url": "https://portfolio-dva-alika.vercel.app/",
+    "description": "Студия AI-агентов для создания сайтов, сбора данных и анализа рынка.",
+    "areaServed": "RU",
+    "serviceType": ["Создание сайтов", "Сбор данных", "Анализ рынка", "AI-автоматизация"],
+    "email": "dvaalika.studio@gmail.com"
+  }
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=111593634', 'ym');
+
+    ym(111593634, 'init', {
+      ssr: true,
+      webvisor: true,
+      clickmap: true,
+      ecommerce: 'dataLayer',
+      referrer: document.referrer,
+      url: location.href,
+      accurateTrackBounce: true,
+      trackLinks: true
+    });
+  </script>
 </head>
 <body>
+  <noscript><div><img src="https://mc.yandex.ru/watch/111593634" style="position:absolute; left:-9999px;" alt=""></div></noscript>
   <header class="header">
     <div class="container header__inner">
       <a href="#" class="header__logo">
         <span class="header__logo-icon">∆</span>
-        <span class="header__logo-text">Два Алика</span>
+        <span class="header__logo-text">Alic Studio</span>
       </a>
       <nav class="header__nav" id="mainNav">
-        <a href="#about">О студии</a>
+        <a href="#hero">Главная</a>
+        <a href="#agents">Команда</a>
+        <a href="#architecture">Архитектура</a>
         <a href="#projects">Проекты</a>
-        <a href="#tech">Технологии</a>
+        <a href="#about">О студии</a>
         <a href="#contact">Контакты</a>
+        <a href="https://dvaalika-site.vercel.app/" target="_blank" rel="noopener" class="header__nav-external">Сайт студии ↗</a>
       </nav>
       <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
         <span class="theme-toggle__icon">☀️</span>
@@ -57,82 +95,66 @@
           <span class="hero__code-typing" id="typewriter"></span>
           <span class="hero__code-cursor">▌</span>
         </div>
-        <h1 class="hero__title">Два AI-агента —<br>сотни возможностей<br>для вашего бизнеса</h1>
-        <p class="hero__subtitle">Создаём сайты любой сложности и собираем данные с маркетплейсов. Полный цикл: от брифа до деплоя.</p>
-        <a href="#projects" class="btn btn--primary">Смотреть проекты</a>
+        <span class="hero__eyebrow">Модульная команда AI-агентов</span>
+        <h1 class="hero__title">Alic Studio —<br>цифровая команда<br>для вашего бизнеса</h1>
+        <p class="hero__subtitle">От сбора данных и аналитики до стратегии, контента, legal review и готового сайта — каждый этап выполняет специализированный агент.</p>
+        <div class="hero__actions"><a href="#agents" class="btn btn--primary">Посмотреть команду</a><a href="#projects" class="hero__link">Смотреть проекты <span>→</span></a></div>
+      </div>
+      <div class="hero-robot" aria-label="Восемь основных агентов Alic Studio">
+        <div class="hero-robot__halo"></div>
+        <img class="hero-robot__image" src="images/alik-studio-robot.png" alt="Голова робота Alic Studio">
+        <div class="hero-node hero-node--orchestrator">ORCH</div><div class="hero-node hero-node--parser">PARSER</div><div class="hero-node hero-node--analyst">ANALYST</div><div class="hero-node hero-node--strategy">STRATEGY</div><div class="hero-node hero-node--content">CONTENT</div><div class="hero-node hero-node--legal">LEGAL</div><div class="hero-node hero-node--architect">ARCHITECT</div><div class="hero-node hero-node--ux">UX</div>
       </div>
       <div class="hero__stats" id="stats">
-        <div class="hero__stat">
-          <span class="hero__stat-num" data-target="7">0</span>
+          <div class="hero__stat">
+           <span class="hero__stat-num" data-target="18">0</span>
           <span class="hero__stat-label">Проектов</span>
         </div>
         <div class="hero__stat">
-          <span class="hero__stat-num" data-target="26">0</span>
-          <span class="hero__stat-label">Скиллов</span>
+         <span class="hero__stat-num" data-target="8">0</span>
+          <span class="hero__stat-label">Основных агентов</span>
         </div>
         <div class="hero__stat">
-          <span class="hero__stat-num" data-target="2">0</span>
-          <span class="hero__stat-label">Агента</span>
+          <span class="hero__stat-num" data-target="20">0</span>
+          <span class="hero__stat-label">AI-ревьюеров</span>
         </div>
       </div>
     </div>
+    <div class="marquee" aria-label="Роли Alic Studio"><div class="marquee__track"><span>ORCHESTRATOR</span><b>✦</b><span>PARSER</span><b>✦</b><span>ANALYST</span><b>✦</b><span>MARKETING STRATEGIST</span><b>✦</b><span>CONTENT CREATOR</span><b>✦</b><span>LEGAL ADVISOR</span><b>✦</b><span>WEB ARCHITECT</span><b>✦</b><span>ORCHESTRATOR</span><b>✦</b><span>PARSER</span><b>✦</b><span>ANALYST</span><b>✦</b><span>MARKETING STRATEGIST</span><b>✦</b><span>CONTENT CREATOR</span><b>✦</b><span>LEGAL ADVISOR</span><b>✦</b><span>WEB ARCHITECT</span><b>✦</b></div></div>
   </section>
 
-  <section class="section about" id="about">
+  <section class="section studio-intro" id="about">
     <div class="container">
       <div class="section__header animate-on-scroll">
         <span class="section__tag">О студии</span>
-        <h2>Два агента — одна команда</h2>
-        <p class="section__desc">Мы — два специализированных AI-агента, работающих в связке. Один собирает и анализирует данные, второй создаёт готовые сайты. Результат — быстрее, чем в любой студии, и дешевле, чем наём команды.</p>
+        <h2>Не один универсальный бот.<br>Целая цифровая команда.</h2>
+        <p class="section__desc">Alic Studio — модульная команда AI-агентов. Orchestrator соединяет специалистов в рабочий процесс, а ревьюеры проверяют результат перед публикацией.</p>
       </div>
-      <div class="about__tabs animate-on-scroll">
-        <button class="about__tab-btn active" data-tab="parser" style="--tab-accent: var(--parser)">
-          <span class="about__tab-icon">🔍</span>
-          Алик-Парсер
-        </button>
-        <button class="about__tab-btn" data-tab="architect" style="--tab-accent: var(--architect)">
-          <span class="about__tab-icon">🏗️</span>
-          Алик-Архитектор
-        </button>
+      <div class="workflow animate-on-scroll" id="architecture" aria-label="Путь задачи через Alic Studio">
+        <div><strong>01</strong><span>Задача</span><small>бриф и цель</small></div><i>→</i><div><strong>02</strong><span>Orchestrator</span><small>маршрут команды</small></div><i>→</i><div><strong>03</strong><span>Specialists</span><small>данные, стратегия, контент</small></div><i>→</i><div><strong>04</strong><span>Reviewers</span><small>проверка качества</small></div>
       </div>
-      <div class="about__panels animate-on-scroll">
-        <div class="about__panel active" id="panel-parser">
-          <div class="about__agent">
-            <div class="about__agent-avatar parser-glow">
-              <img src="images/alik-parser.png" alt="Алик-Парсер — AI-агент для сбора данных" loading="lazy">
-            </div>
-            <div class="about__agent-info">
-              <h3 style="color: var(--parser)">Алик-Парсер</h3>
-              <p class="about__agent-role">Специалист по сбору и анализу данных</p>
-              <ul class="about__agent-skills">
-                <li>Парсинг маркетплейсов (Wildberries, Ozon, Avito)</li>
-                <li>Мониторинг цен и остатков конкурентов</li>
-                <li>Сбор отзывов и анализ тональности</li>
-                <li>Экспорт данных в Excel, PDF, HTML-отчёты</li>
-                <li>Автоматизация по расписанию</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="about__panel" id="panel-architect">
-          <div class="about__agent">
-            <div class="about__agent-avatar architect-glow">
-              <img src="images/alik-architect.png" alt="Алик-Архитектор — AI-агент для создания сайтов" loading="lazy">
-            </div>
-            <div class="about__agent-info">
-              <h3 style="color: var(--architect)">Алик-Архитектор</h3>
-              <p class="about__agent-role">Веб-разработчик и дизайнер</p>
-              <ul class="about__agent-skills">
-                <li>Лендинги, многостраничные сайты, блоги</li>
-                <li>Интернет-магазины с корзиной и каталогом</li>
-                <li>SEO-оптимизация и тёмная тема</li>
-                <li>Анимации, параллакс, микро-эффекты</li>
-                <li>Деплой на GitHub Pages, Vercel, Netlify</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="agents-grid" id="agents">
+        <article class="agent-card agent-card--featured"><img src="images/alik-orchestrator.png" alt="Alic Orchestrator"><div><span>ORCH</span><h3>Alic Orchestrator</h3><p>Координирует команду и выбирает маршрут задачи.</p></div></article>
+        <article class="agent-card"><img src="images/alik-parser.png" alt="Alic Parser"><div><span>P</span><h3>Alic Parser</h3><p>Собирает, очищает и структурирует данные.</p></div></article>
+        <article class="agent-card"><img src="images/alik-analyst.png" alt="Alic Analyst"><div><span>AN</span><h3>Alic Analyst</h3><p>Находит тренды, аномалии и точки роста.</p></div></article>
+        <article class="agent-card"><img src="images/alik-marketing-strategist.png" alt="Alic Marketing Strategist"><div><span>MS</span><h3>Alic Marketing Strategist</h3><p>Формирует аудиторию, позиционирование и воронку.</p></div></article>
+        <article class="agent-card"><img src="images/alik-content-creator.png" alt="Alic Content Creator"><div><span>CC</span><h3>Alic Content Creator</h3><p>Создаёт тексты, статьи, CTA и рекламный контент.</p></div></article>
+        <article class="agent-card"><img src="images/alik-legal-advisor.png" alt="Alic Legal Advisor"><div><span>LA</span><h3>Alic Legal Advisor</h3><p>Проверяет legal, privacy и регуляторные риски.</p></div></article>
+         <article class="agent-card agent-card--featured"><img src="images/alik-architect.png" alt="Alic Web Architect"><div><span>WA</span><h3>Alic Web Architect</h3><p>Проектирует и создаёт цифровые продукты.</p></div></article>
+         <article class="agent-card"><img src="images/alik-studio-robot.png" alt="Alic UX Designer"><div><span>UX</span><h3>Alic UX Designer</h3><p>Продумывает пользовательский путь, интерфейс и удобство продукта.</p></div></article>
       </div>
+      <div class="reviewers-strip animate-on-scroll"><div><span class="section__tag">Контроль качества</span><h3>20 AI-ревьюеров проверяют результат</h3></div><p>UX, визуал, WCAG, формы, навигация, карточки, списки, плотность данных, сравнения, editor и игровые интерфейсы.</p><button type="button" class="reviewers-toggle" aria-expanded="false">Показать роли <span>+</span></button><div class="reviewers-list">UX Auditor · Visual Reviewer · Accessibility Auditor · Interaction Reviewer · Navigation Reviewer · Form Reviewer · Card Reviewer · Density Reviewer · Comparison Reviewer · Editor Reviewer · Panel Reviewer · List Page Reviewer · Detail Page Reviewer · Settings Reviewer · Replay Reviewer · Game UI Reviewer · Accessibility Engineer · UX Engineer · Card Review · Visual QA</div></div>
+    </div>
+  </section>
+
+  <section class="section architecture-section" aria-labelledby="architecture-title">
+    <div class="container">
+      <div class="section__header animate-on-scroll">
+        <span class="section__tag">Архитектура</span>
+        <h2 id="architecture-title">От задачи до результата</h2>
+        <p class="section__desc">Задача проходит через профильных агентов, а финальный результат проверяется специализированными ревьюерами.</p>
+      </div>
+      <div class="architecture-flow animate-on-scroll">Задача <span>→</span> Orchestrator <span>→</span> Parser / Analyst / Strategist <span>→</span> Content / Legal <span>→</span> Web Architect <span>→</span> Reviewers</div>
     </div>
   </section>
 
@@ -141,32 +163,109 @@
       <div class="section__header animate-on-scroll">
         <span class="section__tag">Проекты</span>
         <h2>Наши работы</h2>
-        <p class="section__desc">Семь проектов — от блогов до интернет-магазинов. Каждый создан с нуля с использованием современных технологий и AI-инструментов.</p>
+          <p class="section__desc">Восемнадцать проектов — от блогов и медиа до интернет-магазинов, бьюти-сервисов, игр, AI-инструментов и личных архивов. Каждый создан с нуля с использованием современных технологий и AI-инструментов.</p>
+        <a href="https://dvaalika-site.vercel.app/portfolio" class="btn btn--primary" target="_blank" rel="noopener">Все работы на сайте студии →</a>
       </div>
       <div class="projects__grid" id="projectsGrid">
         <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
           <div class="project-card__image">
-            <img src="images/snow-peak.png" alt="Снежный Пик — лендинг горнолыжного отеля" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80" alt="Калькулятор стоимости сайта" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Лид-магнит</span>
+            <h3 class="project-card__title">Калькулятор стоимости сайта</h3>
+            <p class="project-card__desc">Интерактивный калькулятор: клиент собирает сайт из блоков, цена пересчитывается на лету, заявка летит на почту. Прозрачно, без звонков менеджеров.</p>
+            <div class="project-card__footer">
+              <a href="https://site-calculator.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
+          <div class="project-card__image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80" alt="Пульт студии — дашборд мониторинга" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Инструмент</span>
+            <h3 class="project-card__title">Пульт студии</h3>
+            <p class="project-card__desc">Дашборд мониторинга всех проектов студии: живые статусы и задержки 11 сайтов, автоалерты в Telegram при падении, бот с командой /sites. Serverless на Vercel.</p>
+            <div class="project-card__footer">
+              <a href="https://studio-pult.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
+          <div class="project-card__image">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=80" alt="Обжарка №7 — чашка свежего кофе" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Лендинг</span>
+            <h3 class="project-card__title">Обжарка №7</h3>
+            <p class="project-card__desc">Лендинг кофейни с собственной обжаркой: каталог зерна, анонсы дегустаций, живые заявки в Telegram и на почту, тёмный премиум-дизайн с анимациями.</p>
+            <div class="project-card__footer">
+              <a href="https://obzharka-7.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
+          <div class="project-card__image">
+            <img src="images/snow-peak-hero-original.jpg" alt="Снежный Пик — изображение hero с горным пейзажем" loading="lazy">
+            <div class="project-card__preview project-card__preview--snow">
+              <div class="preview-topbar"><strong>Снежный Пик</strong><span>Проживание　 SPA　 Ресторан　 Трассы　 События　 Спецпредложения</span></div>
+              <div class="preview-phone">8 (800) 123-45-67　 <b>Забронировать</b></div>
+              <div class="preview-content">
+                <span class="preview-badge">🏔 Сезон 2026/2027 открыт</span>
+                <strong>Где каждая вершина — ваша</strong>
+                <p>Откройте мир зимних приключений на курорте Снежный Пик. Роскошные виллы, премиум SPA и 45 трасс для любого уровня.</p>
+                <div class="preview-buttons"><b>Забронировать</b><span>Смотреть видео</span></div>
+              </div>
+            </div>
           </div>
           <div class="project-card__body">
             <span class="project-card__type">Лендинг</span>
             <h3 class="project-card__title">Снежный Пик</h3>
             <p class="project-card__desc">Лендинг для премиального горнолыжного отеля с галереей, ценами, формой бронирования и тёмной темой.</p>
             <div class="project-card__footer">
-              <a href="https://snow-peak-landing.netlify.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <a href="https://snow-peak-landing.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--accent)">
+          <div class="project-card__image">
+            <img src="https://images.unsplash.com/photo-1626379501846-0df4067b8bb9?w=1200&q=80&fit=crop" alt="De Luxe Look — бьюти-студия в Минске" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Сайт и запись</span>
+            <h3 class="project-card__title">De Luxe Look</h3>
+            <p class="project-card__desc">Многостраничный сайт бьюти-студии в Минске с каталогом услуг, профилями мастеров, конкретными свободными слотами и онлайн-заявкой через Telegram.</p>
+            <div class="project-card__footer">
+              <a href="https://de-luxe-look.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
             </div>
           </div>
         </div>
         <div class="project-card animate-on-scroll" style="--card-accent: var(--parser)">
           <div class="project-card__image">
-            <img src="images/gorny-expert.png" alt="Горный эксперт — блог о горнолыжных курортах" loading="lazy">
+            <img src="images/gorny-expert-live-card-v5.webp" alt="Горный эксперт — горный пейзаж и блог о горнолыжных курортах" loading="lazy">
+            <div class="project-card__preview project-card__preview--mountain">
+              <div class="preview-topbar"><strong>⛰　Горный эксперт</strong><span>Главная　 Курорты　 Погода　 События　 Советы　 Контакты</span></div>
+              <div class="preview-langs">🇷🇺 RU　 🇬🇧 EN　 🌙</div>
+              <div class="preview-content">
+                <strong>Горный эксперт</strong>
+                <p>Всё о горнолыжных курортах России и мира: обзоры, цены, прогнозы и советы экспертов</p>
+                <div class="preview-buttons"><b>Смотреть курорты</b><span>Читать статьи</span></div>
+                <small>Материалы</small>
+              </div>
+            </div>
           </div>
           <div class="project-card__body">
             <span class="project-card__type">Блог</span>
             <h3 class="project-card__title">Горный эксперт</h3>
             <p class="project-card__desc">Многостраничный блог о горнолыжных курортах с погодой, сравнением цен, советами и Telegram-формой.</p>
             <div class="project-card__footer">
-              <a href="https://ski-project-pi.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <a href="https://ski-project-tau.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
               <span class="project-card__tech">Vercel</span>
             </div>
           </div>
@@ -222,8 +321,8 @@
             <h3 class="project-card__title">Питерский Эрмитаж</h3>
             <p class="project-card__desc">Лендинг главного музея Санкт-Петербурга в тёмном стиле с золотыми акцентами, частицами, галереей залов, калькулятором билетов, переключателем RU/EN и формой записи на экскурсию.</p>
             <div class="project-card__footer">
-              <a href="https://splendorous-khapse-181ac3.netlify.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
-              <span class="project-card__tech">Netlify</span>
+              <a href="https://hermitage-landing.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
             </div>
           </div>
         </div>
@@ -243,6 +342,104 @@
             <p class="project-card__desc">Агрегатор 30+ стоматологических клиник Минска: каталог с поиском и фильтрами, честные рейтинги, адреса, цены на имплантацию, блок для стоматтуризма из РФ.</p>
             <div class="project-card__footer">
               <a href="https://stomatology-minsk.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--accent)">
+          <div class="project-card__image">
+            <img src="images/doktorgpt-portal.jpg" alt="Доктор GPT — AI-медиа с инструментами, промптами и кейсами" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Медиа-портал</span>
+            <h3 class="project-card__title">Доктор GPT</h3>
+             <p class="project-card__desc">AI-медиа с каталогом инструментов, библиотекой промптов, кейсами, новостями и дайджестами на данных Telegram-канала.</p>
+            <div class="project-card__footer">
+              <a href="https://doktorgpt-portal.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
+          <div class="project-card__image">
+            <img src="images/art-partiya.png" alt="Арт-Партия — бутик настольных игр" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Интернет-магазин</span>
+            <h3 class="project-card__title">Арт-Партия</h3>
+            <p class="project-card__desc">Бутик настольных игр с Next.js 15, Payload CMS 3, PostgreSQL, Vercel Blob Storage и email-уведомлениями через Resend. Админ-панель для менеджеров.</p>
+            <div class="project-card__footer">
+              <a href="https://art-partiya.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel + CMS</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--architect)">
+          <div class="project-card__image">
+            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=1200&q=80" alt="Генератор КП — сборка коммерческого предложения в PDF на лету" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Инструмент</span>
+            <h3 class="project-card__title">Генератор КП</h3>
+            <p class="project-card__desc">Студийный инструмент: менеджер заполняет блоки слева — услуги, объёмы, сроки, цены, а справа на лету собирается аккуратный PDF с коммерческим предложением. Быстро и без ошибок вёрстки.</p>
+            <div class="project-card__footer">
+              <a href="https://kp-dvaalika.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--parser)">
+          <div class="project-card__image">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80" alt="Умный агент — чат-агент с голосовым вводом и памятью" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">AI-система</span>
+            <h3 class="project-card__title">Умный агент</h3>
+            <p class="project-card__desc">Чат-агент в стиле ChatGPT с голосовым вводом, памятью по чатам и инструментами (веб-поиск, генерация лендингов, анализ видео). React/Vite + serverless-функции и Blob-хранилище.</p>
+            <div class="project-card__footer">
+              <a href="https://github.com/marcelalbert1712-dotcom/umnyy-agent" class="project-card__link" target="_blank" rel="noopener">GitHub →</a>
+              <span class="project-card__tech">React + Netlify</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--analyst)">
+          <div class="project-card__image">
+            <img src="images/battleship-card-v2.jpg" alt="Морской бой — классическая игра на 8×8, 10×10 и 12×12" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Игра</span>
+            <h3 class="project-card__title">Морской бой</h3>
+            <p class="project-card__desc">Классическая игра «Морской бой» как в детстве: поля от 8×8 до 12×12, три уровня сложности, расстановка кораблей вручную или авто, счёт побед и морская тема.</p>
+            <div class="project-card__footer">
+              <a href="https://battleship-game-gray.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll neon-gold" style="--card-accent: #c9a84c">
+          <div class="project-card__image">
+            <img src="images/auto-premium.webp" alt="АвтоПремиум — лендинг премиум-автосалона" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Лендинг</span>
+            <h3 class="project-card__title">АвтоПремиум</h3>
+            <p class="project-card__desc">Лендинг премиум-автосалона: каталог моделей (BMW, Mercedes, Porsche, Lamborghini), галерея, трейд-ин, кредит и сервис с формой заявки. Элегантный тёмный дизайн с золотыми акцентами.</p>
+            <div class="project-card__footer">
+              <a href="https://auto-premium-wine.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
+              <span class="project-card__tech">Vercel</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card animate-on-scroll" style="--card-accent: var(--parser)">
+          <div class="project-card__image">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200&q=80" alt="Вспомнить всё — личный цифровой архив" loading="lazy">
+          </div>
+          <div class="project-card__body">
+            <span class="project-card__type">Инструмент</span>
+            <h3 class="project-card__title">Вспомнить всё</h3>
+            <p class="project-card__desc">Личный цифровой архив в стиле «милицейского дела»: фотографии, воспоминания, заметки и таймлайн. Аутентификация, триptych-фото, SEO и деплой на Vercel.</p>
+            <div class="project-card__footer">
+              <a href="https://vspomnit-vsyo.vercel.app/" class="project-card__link" target="_blank" rel="noopener">Смотреть →</a>
               <span class="project-card__tech">Vercel</span>
             </div>
           </div>
@@ -277,15 +474,8 @@
           <div class="tech__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
-          <span class="tech__name">Netlify</span>
-          <span class="tech__desc">Хостинг и деплой</span>
-        </div>
-        <div class="tech__item">
-          <div class="tech__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 13 14 20 7"/><polyline points="14 7 20 7 20 13"/></svg>
-          </div>
           <span class="tech__name">Vercel</span>
-          <span class="tech__desc">Фронтенд-платформа</span>
+          <span class="tech__desc">Хостинг и деплой</span>
         </div>
         <div class="tech__item">
           <div class="tech__icon">
@@ -370,10 +560,15 @@
         <a href="#about">О студии</a>
         <a href="#projects">Проекты</a>
         <a href="#contact">Контакты</a>
+        <a href="https://dvaalika-site.vercel.app/" target="_blank" rel="noopener">Сайт студии ↗</a>
       </div>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
+  <script src="js/i18n-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/chat-widget.js"></script>
 </body>
 </html>
+
