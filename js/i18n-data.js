@@ -30,7 +30,7 @@ window.I18N_DATA = {
       desc:"Задача проходит через профильных агентов, а финальный результат проверяется специализированными ревьюерами.",
       flow:["Задача","Orchestrator","Parser / Analyst / Strategist","Content / Legal","Web Architect","Reviewers"] },
     projHead: { tag:"Проекты", title:"Наши работы",
-      desc:"Двенадцать проектов — от блогов и медиа до интернет-магазинов и бьюти-сервисов. Каждый создан с нуля с использованием современных технологий и AI-инструментов.",
+      desc:"Девятнадцать проектов — от блогов и медиа до интернет-магазинов, бьюти-сервисов, игр, AI-инструментов, личных архивов и художественных концепций. Каждый создан с нуля с использованием современных технологий и AI-инструментов.",
       link:"Смотреть →" },
     projects: [
       { type:"Инструмент", title:"Пульт студии", desc:"Дашборд мониторинга всех проектов студии: живые статусы и задержки 11 сайтов, автоалерты в Telegram при падении, бот с командой /sites. Serverless на Vercel." },
@@ -88,7 +88,7 @@ window.I18N_DATA = {
       desc:"A task passes through specialized agents, and the final result is checked by dedicated reviewers.",
       flow:["Task","Orchestrator","Parser / Analyst / Strategist","Content / Legal","Web Architect","Reviewers"] },
     projHead: { tag:"Projects", title:"Our work",
-      desc:"Twelve projects — from blogs and media to online stores and beauty services. Each built from scratch with modern technology and AI tools.",
+      desc:"Nineteen projects — from blogs and media to online stores, beauty services, games, AI tools, personal archives and art concepts. Each built from scratch with modern technology and AI tools.",
       link:"View →" },
     projects: [
       { type:"Tool", title:"Studio Pult", desc:"A dashboard monitoring every studio project: live statuses and latency for 11 sites, automatic Telegram alerts on downtime, a bot with a /sites command. Serverless on Vercel." },
@@ -102,7 +102,8 @@ window.I18N_DATA = {
       { type:"Landing", title:"Altai Wind", desc:"A landing page for Altai mountain tours: programs, booking, adventure vibes." },
       { type:"Landing", title:"Hermitage Guide", desc:"A Hermitage landing guide: halls, routes, tickets." },
       { type:"Aggregator", title:"Minsk Dentists", desc:"A dental clinic aggregator: compare clinics, services, appointments." },
-      { type:"Media portal", title:"Doctor GPT", desc:"Media about AI: news, tools and trends of artificial intelligence." }
+      { type:"Media portal", title:"Doctor GPT", desc:"Media about AI: news, tools and trends of artificial intelligence." },
+      { type:"Art project", title:"Archive of Uninvented Things", desc:"An interactive virtual museum of invention concepts that could have changed the world — but were never created. Exhibits, a secret map, idea submission form and multilingual support (RU/EN)." }
     ],
     tech: { tag:"Technologies", title:"Tools & stack",
       desc:"We use modern AI tools and platforms for building websites and collecting data.",
